@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_product_scanner/ui/screens/some_screen.dart';
+import 'package:mobile_product_scanner/logic/StoresProvider.dart';
+import 'package:mobile_product_scanner/ui/screens/StoresScreen.dart';
+import 'package:provider/provider.dart';
 
 class AppRouter {
-  Route onGenerateRoute(RouteSettings settings) {
+  Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case StoresScreen.route:
         return MaterialPageRoute(
-          builder: (_) => SomeScreen(
-            title: "Some Screen",
-            color: Colors.blueAccent,
-          ),
-        );
-      case '/second':
-        return MaterialPageRoute(
-          builder: (_) => SomeScreen(
-            title: "Second Screen",
-            color: Colors.redAccent,
+          builder: (_) => ChangeNotifierProvider(
+            create: (_) => StoresProvider(),
+            child: StoresScreen(),
           ),
         );
       default:
