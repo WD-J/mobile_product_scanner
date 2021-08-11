@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_product_scanner/data/stores_data.dart';
+import 'package:mobile_product_scanner/data/store_data.dart';
 
 class StoreWidget extends StatelessWidget {
   final Store store;
@@ -8,7 +8,6 @@ class StoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
         child: Column(
