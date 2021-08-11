@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_product_scanner/logic/StoresProvider.dart';
-import 'package:mobile_product_scanner/ui/screens/StoresScreen.dart';
+import 'package:mobile_product_scanner/logic/StoreProvider.dart';
+import 'package:mobile_product_scanner/ui/screens/BarcodeScanScreen.dart';
+import 'package:mobile_product_scanner/ui/screens/StoreScreen.dart';
 import 'package:provider/provider.dart';
 
 class AppRouter {
@@ -9,9 +10,13 @@ class AppRouter {
       case StoresScreen.route:
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider(
-            create: (_) => StoresProvider(),
+            create: (_) => StoreProvider(),
             child: StoresScreen(),
           ),
+        );
+      case BarcodeScanScreen.route:
+        return MaterialPageRoute(
+          builder: (_) => BarcodeScanScreen(),
         );
       default:
         return null;
